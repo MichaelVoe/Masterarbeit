@@ -1,0 +1,164 @@
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python /home/familie/symk/builds/release/bin/translate/translate.py /home/familie/symk/domains/Domain.pddl /home/familie/symk/domains/Ziel3.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.013s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.017s wall-clock]
+Preparing model... [0.000s CPU, 0.005s wall-clock]
+Generated 46 rules.
+Computing model... [0.010s CPU, 0.041s wall-clock]
+505 relevant atoms
+811 auxiliary atoms
+1316 final queue length
+1381 total queue pushes
+Completing instantiation... [0.010s CPU, 0.009s wall-clock]
+Instantiating: [0.020s CPU, 0.073s wall-clock]
+Computing fact groups...
+Finding invariants...
+12 initial candidates
+Finding invariants: [0.000s CPU, 0.003s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.008s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+0 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.022s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.007s wall-clock]
+Translating task: [0.010s CPU, 0.015s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+148 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.002s wall-clock]
+Reordering and filtering variables...
+1 of 1 variables necessary.
+0 of 1 mutex groups necessary.
+102 of 102 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.008s wall-clock]
+Translator variables: 1
+Translator derived variables: 0
+Translator facts: 38
+Translator goal facts: 1
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 102
+Translator axioms: 0
+Translator task size: 346
+Translator peak memory: 39508 KB
+Writing output... [0.000s CPU, 0.004s wall-clock]
+Done! [0.040s CPU, 0.139s wall-clock]
+
+translate exit code: 0
+INFO     Running preprocessor (release).
+INFO     preprocess stdin: output.sas
+INFO     preprocess time limit: None
+INFO     preprocess memory limit: None
+INFO     preprocess command line string: /home/familie/symk/builds/release/bin/preprocess < output.sas
+Building causal graph...
+The causal graph is acyclic.
+1 variables of 1 necessary
+0 of 0 mutex groups necessary.
+102 of 102 operators necessary.
+0 of 0 axiom rules necessary.
+Initializing mutex computation...
+Mutex computation initialized with 38 fluents.
+iteration for mutex detection and operator pruning
+Initialize m_index fw
+Initialized mvalues forward: reached=1, notReached=37, spurious=1406
+Initialize m_ops fw
+Computing mutexes...
+Mutex computation finished with reached=38, notReached=0, spurious=1406
+0 operators are spurious because were not triggered
+H^2 mutexes added fw: 0, unreachable: 0
+0 of 102 operators detected as spurious
+iteration for mutex detection and operator pruning
+Initialize m_index bw
+Init values regression
+Initialized mvalues backward: reached=1, notReached=37, spurious=1406
+Initialize m_ops bw
+Computing mutexes...
+Mutex computation finished with reached=38, notReached=0, spurious=1406
+0 operators are spurious because were not triggered
+H^2 mutexes added bw: 0, unreachable: 0
+0 of 102 operators detected as spurious
+Total mutex and disambiguation time: 0.000371 iterations: 2
+0 of 0 mutex groups necessary.
+102 of 102 operators necessary.
+0 of 0 axiom rules necessary.
+Change id of operators: 102
+Change id of mutexes
+Change id of goals
+Change id of initial state
+Remove unreachable facts from variables: 1
+0 of 0 mutex groups necessary.
+102 of 102 operators necessary.
+0 of 0 axiom rules necessary.
+Updating causal graph and pruning unnecessary facts
+1 variables of 1 of 1 necessary
+The causal graph is acyclic.
+1 variables of 1 necessary
+0 of 0 mutex groups necessary.
+102 of 102 operators necessary.
+0 of 0 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor variables: 1
+Preprocessor facts: 38
+Preprocessor derived variables: 0
+Preprocessor operators: 102
+Preprocessor mutex groups: 0
+Preprocessor task size: 346
+Writing output...
+done
+
+preprocess exit code: 0
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/familie/symk/builds/release/bin/downward --search 'symk-bd(plan_selection=top_k_optimal(num_plans=1000))' --internal-plan-file sas_plan < output.sas
+reading input... [t=2.8682e-05s]
+done reading input! [t=0.000383954s]
+setrlimit (stack size) to 500MB
+Building successor generator...done! [t=0.00200181s]
+peak memory difference for successor generator creation: 0 KB
+time for successor generation creation: 2.6507e-05s
+Variables: 1
+FactPairs: 38
+Bytes per state: 4
+TR(time=60000, nodes=100000)
+Mutex(time=60000, nodes=100000, type=edeletion)
+Aux(time=2000, nodes=1000000)
+Disj(nodes=2147483647)
+Estimation: min_time(1000) time_penalty +(1000)*(2) nodes_penalty +(1000)*(2)
+MaxStep(time=30000, nodes=100000000, nodes_per_planning_second=100)
+Ratio useful: 0
+   Min alloted time: 60000 nodes: 10000000
+   Max alloted time: 60000 nodes: 15000000
+   Mult alloted time: 2 nodes: 2
+   Ratio after relax: 0.8
+Plan Selector: Optimal-Top-K
+building causal graph...done! [t=7.177e-06s]
+Sym variable order: 0 
+Initializing Symbolic Variables
+Num variables: 1 => 6
+Initialize Symbolic Manager(12, 1333333, 16000000, 0)
